@@ -1,0 +1,13 @@
+export interface IProductType {
+    id_product:number;
+    product_name: string;
+    price:number;
+    qty_stock: number;
+    qty_selected?: number;
+  }
+
+  export interface IUsersType {
+    first_name:string;
+    last_name:string;
+    email:string;
+  }

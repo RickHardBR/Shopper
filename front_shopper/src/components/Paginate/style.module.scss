@@ -1,0 +1,38 @@
+@import '../../styles/colors';
+
+.pagination {
+  display: flex;
+  color: $green-700;
+
+  font-weight: 400;
+  font-family: 'Roboto', sans serif;
+
+  padding: 1rem;
+
+  li {
+    border-radius: 10px;
+    list-style-type: none;
+
+    a {
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.break_me {
+  cursor: default;
+}
+
+.active {
+  color: $green-600;
+  
+  font-weight: 700;
+  border-color: transparent;
+}
+.open {
+  display: block;
+}
+.close {
+  display: none;
+}

@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 6.5rem;
+
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 40px;
+
+  background-color: $green-600;
+
+  button {
+    color: $white;
+    border: none;
+    background: none;
+
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $green-700;
+  }
+}

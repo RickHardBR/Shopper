@@ -1,0 +1,13 @@
+@import '../../styles/colors';
+
+.loading {
+  display: flex;
+  list-style: none;
+  align-items: center;
+
+  height: 500px;
+
+p {
+    font-size: 3rem;
+  }
+}

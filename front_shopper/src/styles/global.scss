@@ -1,0 +1,57 @@
+@import 'colors';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  
+  @media screen and (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 87.5%;
+  }
+}
+
+body {
+
+  font-size: 1rem;
+  color: $gray-900;
+  font-family: 'lato', sans-serif;
+   
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  
+  flex: 1;
+
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  
+  flex: 1;
+
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: $gray-300;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: $green-600;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $green-700;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
