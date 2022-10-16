@@ -1,4 +1,4 @@
-<h1 id="topo">Desafio Shopper</h1>
+<h1 id="topo">Desafio - Shopper</h1>
 Repositório com os trabalhos feitos durante o BootCamp AfroAcademy
 
 
