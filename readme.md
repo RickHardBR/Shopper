@@ -35,7 +35,7 @@ disponíveis e seus respectivos preços e estoque com as seguintes definições:
 <dd>qty_stock = quantidade em estoque<br></dd>
 </dl>
 </code>
-</h4>
+
 
 ### Abaixo listamos os requisitos que seu sistema deve atender:
 
