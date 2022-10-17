@@ -23,7 +23,7 @@ export const PopupModal = () => {
               <div onClick={() => setErrosAndSuccess('')}>
                 <span>x</span>
               </div>
-              <h1 className={styles.title}>Error</h1>
+              <h1 className={styles.title}>Informação</h1>
               <h3 className={styles.messageError}>{errosAndSuccess}</h3>
             </div>
           </Popup>
