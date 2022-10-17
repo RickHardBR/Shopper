@@ -1,5 +1,5 @@
 export interface IProductType {
-    [x: string]: string | undefined;
+    // [x: string]: string | undefined;
     id_product:number;
     product_name: string;
     price:number;
