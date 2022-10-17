@@ -13,6 +13,7 @@ Repositório com os trabalhos feitos durante o BootCamp AfroAcademy
   
       * [Criando uma aplicação Vite](#vite)
 
+Link da aplicação: https://shopper-eight.vercel.app/
 
 #
 <h2 id="teste"><b>O Desafio</b></h2>
