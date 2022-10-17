@@ -1,0 +1,51 @@
+@import '../../styles/colors';
+
+div {
+  border-radius: 8px;
+}
+.content {
+  
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    right: 0;
+    position: absolute;
+    margin-right: 0.5rem;
+
+    background-color: $green-600;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    > span {
+      color: $white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.messageError {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+  font-size: 1.5rem;
+  color: $green-600;
+  margin-top: 1rem;
+  
+ 
+}

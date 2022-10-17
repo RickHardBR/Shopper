@@ -9,26 +9,27 @@ export default function Footer() {
     <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
         <p>
-          Todos os direitos reservados - ©️ - 2022{' '}
+          Todos os direitos reservados - 🔗<a href="https://github.com/RickHardBR" target="_blank" rel="noopener">RickHarDev</a> - ©️ - 2022{' '}
           <img
           src={logo}
           alt="logo Shopper" />
         </p>
+        
         <nav
         className={styles.iconsFooter}>
-          <a href="">
+          <a href="#">
             <Icon
             className={styles.icons}
             icon="akar-icons:instagram-fill" />
           </a>
 
-          <a href="">
+          <a href="#">
             <Icon
             className={styles.icons}
             icon="akar-icons:facebook-fill" />
           </a>
 
-          <a href="">
+          <a href="#">
             <Icon
             className={styles.icons}
             icon="akar-icons:youtube-fill" />

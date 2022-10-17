@@ -62,10 +62,11 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
       const res = await apiBase.post("/user/singUp", {...formUser.form})
       console.log(res.data)
       formUser.clearInputs()
-      // setErrosAndSuccess("usuário criado com sucesso.")
+      setErrosAndSuccess(res.data.message)
     } catch (error: any) {
+      setIsOpenModal(true)
       console.log(error)
-      // setErrosAndSuccess(error)
+      setErrosAndSuccess(error?.response?.data)
     }
   }
 
@@ -139,7 +140,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
 
     } catch (error: any) {
       console.log(error);
-      // setErrosAndSuccess(error?.response?.data);
+      setErrosAndSuccess(error?.response?.data);
     }
   }
 
@@ -165,7 +166,8 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     addUser,
     errosAndSuccess,
     isOpenModal, 
-    setIsOpenModal
+    setIsOpenModal,
+    setErrosAndSuccess
   }
 
   return (

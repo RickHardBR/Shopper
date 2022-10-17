@@ -18,6 +18,14 @@
       text-align: center;
       align-items: center;
 
+      a {
+        color: $white;
+        text-decoration: none;
+        margin: 0 .2rem 0 0.2rem;
+        
+        font-weight: bold;
+      }
+
       img {
         padding-left: 1rem;
       }

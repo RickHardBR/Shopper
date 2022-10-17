@@ -26,6 +26,7 @@ export type ContextGlobaTypes = {
   setCurrentPage: (input: number) => void
   addCartLocal: (input: IProductType)=> void
   addUser: (e: ChangeEvent<HTMLFormElement>) => Promise<void>
+  setErrosAndSuccess: (input: string) => void
 
   isOpenModal: boolean
   setIsOpenModal: (input: boolean) => void

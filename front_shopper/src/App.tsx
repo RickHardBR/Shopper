@@ -11,10 +11,14 @@ import ProductsCard from './components/productsCard/ProductsCard';
 
 import Cart from './components/Cart/Cart';
 
+import { PopupModal } from './components/Popup/PopupModal';
+
 export default function App() {
  
   return (
 <>
+      <PopupModal />
+      
       <Header />
       <main>
       <Cart />

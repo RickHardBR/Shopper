@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from 'react'
 
 import { ContextGlobal } from '../../Context/ContextGlobal'
 
+import * as Prismic from '@prismicio/client'
+
 import { IProductType } from '../../types/apiBaseTypes'
 
 import { useLocalStorage } from '../../hooks/useLocalStorage'
@@ -16,7 +18,11 @@ import ButtonComponent from '../../communs/Buttons/Buttons'
 
 import azeite from '../../assets/imagesSvg/Products/azeite.png'
 
+const endpoint = Prismic.getRepositoryEndpoint('shopperproducts')
+const client = Prismic.createClient(endpoint)
+
 export default function ProductsCard() {
+  
   const {
     getProducts,
     products,
