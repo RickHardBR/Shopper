@@ -109,6 +109,7 @@ Vite é uma ferramenta para o desenvolvedor(a) frontend, o significado de sua pa
 <dd> 🪄 LitElement
 <dd> 🪄 Svelte
 </dl>
+
 **Criando seu primeiro projeto Vite**
 
 _**Você pode criá-lo com NPM ou Yarn**_
@@ -123,14 +124,15 @@ _Em seguida você poderá adicionar o nome do projeto, nesse caso vamos chamá-l
 
 **Começando seu projeto**
 
-01)-Crie uma pasta com o nome do projeto.
-02)-Abra a pasta e dentro dela abra o VSCode com o botão direito do mouse:
+Crie uma pasta com o nome do projeto.
+
+Abra a pasta e dentro dela abra o VSCode com o botão direito do mouse:
 
 ![image](https://user-images.githubusercontent.com/89301596/190339129-edc53383-2e49-4014-8389-451383a90a9d.png)
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 
-03)-Com o VSCode aberto, abra um terminal:
+Com o VSCode aberto, abra um terminal:
 
 ![image](https://user-images.githubusercontent.com/89301596/190339391-9a666c44-64cf-49a7-a2a7-a0ffc17470bc.png)
 
