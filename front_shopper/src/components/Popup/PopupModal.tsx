@@ -1,11 +1,8 @@
-// import Popup from 'reactjs-popup'
-
 import { useContext } from 'react'
 
 import { ContextGlobal } from '../../Context/ContextGlobal'
 
 import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css'
 
 import styles from './style.module.scss'
 
