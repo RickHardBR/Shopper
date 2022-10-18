@@ -1,4 +1,4 @@
-<h1 id="topo">Desafio - Shopper</h1>
+f<h1 id="topo">Desafio - Shopper</h1>
 Repositório com os trabalhos feitos durante o BootCamp AfroAcademy
 
 - [Indice](#funciona)
@@ -126,12 +126,25 @@ _Em seguida você poderá adicionar o nome do projeto, nesse caso vamos chamá-l
 
 Crie uma pasta com o nome do projeto.
 
-Abra a pasta e dentro dela abra o VSCode com o botão direito do mouse:
+Abra a pasta do seu projeto e dentro dela abra o VSCode com o botão direito do mouse:
 
 ![image](https://user-images.githubusercontent.com/89301596/190339129-edc53383-2e49-4014-8389-451383a90a9d.png)
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 
+Ou caso não aparece o **"Abrir com Code"**
+
+Abra o **Git Bash Here**
+
+<img src="https://user-images.githubusercontent.com/89301596/196497681-4e03e959-7556-4e8b-bcf5-f0db1dff4beb.png" />
+
+no terminal que irá se abrir, digite: code . e aperte enter
+
+<img src="https://user-images.githubusercontent.com/89301596/196497840-bef68668-1b5f-4fb1-bc65-f470695725bd.png" />
+
+e é só aguardar, o VSCode irá abrir, já dentro da sua pasta:
+
+<img src="https://user-images.githubusercontent.com/89301596/196497898-44dd4165-96bc-473a-81d6-b6745b254199.png" />
 Com o VSCode aberto, abra um terminal:
 
 ![image](https://user-images.githubusercontent.com/89301596/190339391-9a666c44-64cf-49a7-a2a7-a0ffc17470bc.png)
