@@ -29,11 +29,13 @@ Link da aplicação: https://shopper-rickhardbr.vercel.app/
 <h2>
 Você vai criar um formulário simples de cadastro de pedidos de supermercado. O sistema deve ser escrito em Python ou Javascript (node.js e/ou react.js). 
 </h2>
+
 <h3 align="justify">
 
 > Além da funcionalidade, avaliaremos principalmente organização e clareza no código, lembre-se que um programador lê mais código do que escreve, então códigos limpos e bem estruturados facilitam a vida de todos.<br>
-> Junto desse documento você receberá o arquivo products.csv , que é uma lista com produtos
-> disponíveis e seus respectivos preços e estoque com as seguintes definições:
+> Junto desse documento você receberá o arquivo products.csv , que é uma lista com produtos disponíveis e seus respectivos preços e estoque com as seguintes definições:
+
+</h3>
 
 <code>
 <dl>
