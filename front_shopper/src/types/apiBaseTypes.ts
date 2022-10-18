@@ -5,6 +5,7 @@ export interface IProductType {
     price:number;
     qty_stock: number;
     qty_selected?: number;
+    photo_product: string;
   }
 
   export interface IUsersType {

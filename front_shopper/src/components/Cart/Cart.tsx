@@ -120,7 +120,7 @@ export default function Cart() {
                       <div key={item.id_product}>
                         <li className={styles.containerLi}>
                           <div className={styles.productsImage}>
-                            <img src={azeite} alt="azeite" />
+                            <img src={item.photo_product} alt="azeite" />
                           </div>
                           <div className={styles.productName}>
                             <p className={styles.productNameCard}>
