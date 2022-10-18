@@ -287,10 +287,10 @@ Com certeza é uma opção a considerar na hora de criar seu novo projeto.
 
   <h2 id="front-folder">Organização das pastas - Front End</h2>
     <div>
-      <img width="250px" heith="450" src="https://user-images.githubusercontent.com/89301596/196488121-51ca7ad9-b519-4566-851a-70daa9f44a1c.png">
-      <img width="250px" heith="450" src="https://user-images.githubusercontent.com/89301596/196488432-d93a513d-0be0-4f96-b7c6-bf8d94a99e44.png">
-      <img width="250px" heith="450" src="https://user-images.githubusercontent.com/89301596/196488600-26ba1f83-387a-406b-951c-a00f8727cfd2.png">
-      <img width="250px" src="https://user-images.githubusercontent.com/89301596/196488779-3510ca4d-f770-42cd-aab5-8d84cae32bbc.png">
+      <img width="350px" height="450" src="https://user-images.githubusercontent.com/89301596/196488121-51ca7ad9-b519-4566-851a-70daa9f44a1c.png">
+      <img width="350px" height="450" src="https://user-images.githubusercontent.com/89301596/196488432-d93a513d-0be0-4f96-b7c6-bf8d94a99e44.png">
+      <img width="350px" height="450" src="https://user-images.githubusercontent.com/89301596/196488600-26ba1f83-387a-406b-951c-a00f8727cfd2.png">
+      <img width="350px" src="https://user-images.githubusercontent.com/89301596/196488779-3510ca4d-f770-42cd-aab5-8d84cae32bbc.png">
     </div>
 </div>
 
@@ -302,10 +302,10 @@ Com certeza é uma opção a considerar na hora de criar seu novo projeto.
 
   <h2 id="back-folder">Organização das pastas - Back End</h2>
     <div>
-      <img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045719-429018e9-d162-4b9b-a569-bbcf1f7c4bd4.png">
-      <img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045907-40766de6-3626-4b0e-80b9-c1de52f4283b.png">
-      <img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045982-ad32dd95-4494-486d-b2dd-0d7640b67421.png">
-      <img width="230px" src="https://user-images.githubusercontent.com/89301596/196046052-84ccd1e0-f444-4c74-84cf-3bc39bc84cd9.png">
+      <img width="330px" height="450" src="https://user-images.githubusercontent.com/89301596/196045719-429018e9-d162-4b9b-a569-bbcf1f7c4bd4.png">
+      <img width="330px" height="450" src="https://user-images.githubusercontent.com/89301596/196045907-40766de6-3626-4b0e-80b9-c1de52f4283b.png">
+      <img width="330px" height="450" src="https://user-images.githubusercontent.com/89301596/196045982-ad32dd95-4494-486d-b2dd-0d7640b67421.png">
+      <img width="330px" src="https://user-images.githubusercontent.com/89301596/196046052-84ccd1e0-f444-4c74-84cf-3bc39bc84cd9.png">
     </div>
 </div>
 
