@@ -37,15 +37,14 @@ Você vai criar um formulário simples de cadastro de pedidos de supermercado. O
 
 </h3>
 
-<code>
-<dl>
+
 <dl>
 <dd>id = id do produto<br></dd>
 <dd>name = nome do produto<br></dd>
 <dd>price = preço do produto em reais. <br></dd>
 <dd>qty_stock = quantidade em estoque<br></dd>
 </dl>
-</code>
+
 
 ### Abaixo listamos os requisitos que seu sistema deve atender:
 
