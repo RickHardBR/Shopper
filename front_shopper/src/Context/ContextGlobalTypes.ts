@@ -7,15 +7,21 @@ export type DatesLocal = {
   deliveyDate: string | Date;
 }
 
+export type TErrorsAndSuccessApi = {
+  message: string;
+  status: number;
+}
+
 export type ContextGlobaTypes = {
   userLocal: any
   isOpen: boolean
   selectQty: number
-  errosAndSuccess: string
+  errorsAndSuccess: TErrorsAndSuccessApi
   currentPage: number
   products: IProductType[]
   productsLoading: boolean
   cartLocal: IProductType[] | [] | undefined
+  emailLocal: string | null | undefined
   getProducts: () => Promise<void>
   setDate: (input: string) => void
   setCartLocal: (input: any) => void
@@ -23,10 +29,10 @@ export type ContextGlobaTypes = {
   setSelectQty:(input: number) => void
   removeItemLocal: (id: number) => void
   purchaseProducts: () => Promise<void>
+  setErrorsAndSuccess: (input: TErrorsAndSuccessApi) => any
   setCurrentPage: (input: number) => void
   addCartLocal: (input: IProductType)=> void
   addUser: (e: ChangeEvent<HTMLFormElement>) => Promise<void>
-  setErrosAndSuccess: (input: string) => void
 
   isOpenModal: boolean
   setIsOpenModal: (input: boolean) => void

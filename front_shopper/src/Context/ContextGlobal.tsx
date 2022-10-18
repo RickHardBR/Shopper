@@ -2,7 +2,6 @@ import {
   ChangeEvent,
   createContext,
   ReactNode,
-  useEffect,
   useState
 } from 'react'
 
@@ -14,7 +13,7 @@ import { apiBase } from '../services/apiBase'
 
 import { formatDate } from "../utils/formatDate"
 
-import { DatesLocal } from "./ContextGlobalTypes"
+import { DatesLocal, TErrorsAndSuccessApi } from "./ContextGlobalTypes"
 
 import { ContextGlobaTypes } from './ContextGlobalTypes'
 
@@ -22,6 +21,7 @@ import {
   IProductType,
   IUsersType
 } from '../types/apiBaseTypes'
+import { getKeyLocalStorage } from '../utils/getKeyLocalStorage'
 
 type ContextGlobalProps = {
   children: ReactNode
@@ -37,6 +37,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   const [products, setProducts] = useState<IProductType[]>([])
 
   const [productsLoading, setProductsLoading] = useState<boolean>(false)
+  const [isOpenModal, setIsOpenModal ] = useState<boolean>(false)
   
   const [selectQty, setSelectQty] = useState<number>(1)
 
@@ -44,29 +45,34 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   
   let [cartLocal, setCartLocal] = useLocalStorage<IProductType[] | []>('cart', [])
   let [userLocal, setUserLocal] = useLocalStorage<IUsersType | any>('user', "")
+  let [ emailLocal, setEmailLocal ] = useLocalStorage<string>("email", "")
+
   let [ datesLocal, setDatesLocal ] = useLocalStorage<DatesLocal[] | []>("dates", []);
   let [ date, setDate ] = useState<string>(""); 
   
-  const [ errosAndSuccess, setErrosAndSuccess ] = useState<string>("")
-  const [isOpenModal, setIsOpenModal ] = useState<boolean>(false)
+  const [ errorsAndSuccess, setErrorsAndSuccess ] = useState<TErrorsAndSuccessApi>({
+    message: "",
+    status: 0
+  })
 
   const formUser = useForm<IUsersType>({
     first_name: "",
     last_name: "",
     email: ""
   })
+
+  //* =========================================================================
   
   const addUser = async (e: ChangeEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
       const res = await apiBase.post("/user/singUp", {...formUser.form})
-      console.log(res.data)
+      setEmailLocal(formUser.form.email);
       formUser.clearInputs()
-      setErrosAndSuccess(res.data.message)
+      setErrorsAndSuccess({message: res.data.message, status: res.status})
     } catch (error: any) {
-      setIsOpenModal(true)
       console.log(error)
-      setErrosAndSuccess(error?.response?.data)
+      setErrorsAndSuccess({message: error?.response?.data, status: 400})
     }
   }
 
@@ -123,10 +129,24 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     }
   }
 
+  const emailLocalKey = getKeyLocalStorage(String("email"))!
+  .replace(/"/g,"")
+
   const purchaseProducts = async ()=>{
     try {
+
+      if ( formUser.form.email.length <= 0 && emailLocalKey?.length! <= 0 ) {
+        setErrorsAndSuccess({
+          message: "Coloque o seu email para prosseguir com a compra!.", 
+          status: 400
+        })
+        return
+      }
+
       for ( let i = 0; i < cartLocal!.length; i++){
-       const res = await apiBase.post(`/purchase/${formUser.form.email}?date=${date}`, {
+       const res = 
+       await apiBase
+       .post(`/purchase/${emailLocalKey?.length! > 0 ? emailLocalKey! : formUser.form.email}?date=${date}`, {
           id_product: cartLocal![i].id_product,
           qty_product_selected: cartLocal![i].qty_selected,
         })
@@ -140,7 +160,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
 
     } catch (error: any) {
       console.log(error);
-      setErrosAndSuccess(error?.response?.data);
+      setErrorsAndSuccess({message: error?.response?.data, status: 400})
     }
   }
 
@@ -149,25 +169,32 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     products,
     productsLoading,
     getProducts,
+    purchaseProducts, 
+    //* ===============
     currentPage,
     setCurrentPage,
+    //* ================
     isOpen,
     setIsOpen,
-    selectQty,
-    setSelectQty,
-    cartLocal,
-    addCartLocal,
-    removeItemLocal,
-    setCartLocal,
-    purchaseProducts, 
-    setDate,
-    formUser,
-    userLocal,
-    addUser,
-    errosAndSuccess,
     isOpenModal, 
     setIsOpenModal,
-    setErrosAndSuccess
+    //* ================
+    selectQty,
+    setSelectQty,
+    //* =================
+    cartLocal,
+    addCartLocal,
+    setCartLocal,
+    removeItemLocal,
+    userLocal,
+    emailLocal,
+    //* =================
+    formUser,
+    addUser,
+    //* ==================
+    setDate,
+    errorsAndSuccess,
+    setErrorsAndSuccess
   }
 
   return (
