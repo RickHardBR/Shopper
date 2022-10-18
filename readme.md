@@ -12,6 +12,11 @@ Repositório com os trabalhos feitos durante o BootCamp AfroAcademy
       * [Tecnologia empregada](#tecnologia)
   
       * [Criando uma aplicação Vite](#vite)
+       
+    * [Imagens](#imagens)
+      * [Imagens - WebPage](#fWebPage)
+      * [Imagens - Organização das pastas Front End](#front-folder)
+      * [Imagens - Organização das pastas Back End](#back-folder)
 
 Link da aplicação: https://shopper-rickhardbr.vercel.app/
 
@@ -236,41 +241,90 @@ Com certeza é uma opção a considerar na hora de criar seu novo projeto.
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 
-<h1 id="imagens">Imagens</h1>
+<h1 id="imagens">Imagens - Teste técnico</h1>
 
 <div align="center" >
-<h4>Tela inicial</h4>
-<img width= 900px src="https://user-images.githubusercontent.com/89301596/196044736-7e109746-446d-4741-b4e2-841a6ecbb6e9.png" />
+<h3 id="website">Tela inicial</h3>
+<img width= 900px src="https://user-images.githubusercontent.com/89301596/196485399-27577ad3-3a5c-436e-96d6-a19198fd04ac.png" />
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 
-<h4>Tela inicial mostrando a paginação funcional</h4>
-<img width= 900px src="https://user-images.githubusercontent.com/89301596/196045085-dd9a1c17-ca5e-417b-ab88-016e1c45c0bd.png" />
+#
+
+<h3>Tela inicial mostrando a paginação funcional</h3>
+<img width= 900px src="https://user-images.githubusercontent.com/89301596/196485577-1a36cda1-2202-4e99-a139-dd4357c51af9.png" />
+
+#
+
+<h3>Detalhe da paginação</h3>
+<img width= 400px src="https://user-images.githubusercontent.com/89301596/196485717-975630b8-0637-4d3b-bf92-d1319404c46a.png" />
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 
-<h4>Carrinho de compras vazio</h4>
+#
+
+<h3>Carrinho de compras vazio</h3>
 <img width= 400px src="https://user-images.githubusercontent.com/89301596/196044896-b5dab0f7-8729-4c5a-89eb-702629673dc5.png">
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
-<h4>Carrinho de compras com dois produtos</h4>
-<img width= 400px src="https://user-images.githubusercontent.com/89301596/196045007-cbb3e136-3afb-4e0a-aa95-7690a95585c1.png">
 
+#
+
+<h3>Carrinho de compras com dois produtos</h3>
+<img width= 400px src="https://user-images.githubusercontent.com/89301596/196486101-3e4b83db-4b21-4f73-a67d-5e2bb31c131d.png">
+
+#
+
+<h3>Detalhe para o item</h3>
+<p>Quando temos apenas um item o botão de ( - ) menos fica oculto</p>
+<img width= 600px src="https://user-images.githubusercontent.com/89301596/196486329-19f88a12-cac1-4d56-8c5a-ae940f6c3b8f.png">
+
+<h4 align="right"><a href="#topo">⬆️Topo</a></h4>
+
+#
+
+<div align="center">
+
+  <h2 id="front-folder">Organização das pastas - Front End</h2>
+    <div>
+      <img width="250px" heith="450" src="https://user-images.githubusercontent.com/89301596/196488121-51ca7ad9-b519-4566-851a-70daa9f44a1c.png">
+      <img width="250px" heith="450" src="https://user-images.githubusercontent.com/89301596/196488432-d93a513d-0be0-4f96-b7c6-bf8d94a99e44.png">
+      <img width="250px" heith="450" src="https://user-images.githubusercontent.com/89301596/196488600-26ba1f83-387a-406b-951c-a00f8727cfd2.png">
+      <img width="250px" src="https://user-images.githubusercontent.com/89301596/196488779-3510ca4d-f770-42cd-aab5-8d84cae32bbc.png">
+    </div>
 </div>
 
-<h2 href="#pastas">Organização das pastas - Back End</h2>
 
-<img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045719-429018e9-d162-4b9b-a569-bbcf1f7c4bd4.png">
-<img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045907-40766de6-3626-4b0e-80b9-c1de52f4283b.png">
-<img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045982-ad32dd95-4494-486d-b2dd-0d7640b67421.png">
-<img width="230px" src="https://user-images.githubusercontent.com/89301596/196046052-84ccd1e0-f444-4c74-84cf-3bc39bc84cd9.png">
+<h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 
+#
+<div align="center">
+
+  <h2 id="back-folder">Organização das pastas - Back End</h2>
+    <div>
+      <img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045719-429018e9-d162-4b9b-a569-bbcf1f7c4bd4.png">
+      <img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045907-40766de6-3626-4b0e-80b9-c1de52f4283b.png">
+      <img width="230px" heith="450" src="https://user-images.githubusercontent.com/89301596/196045982-ad32dd95-4494-486d-b2dd-0d7640b67421.png">
+      <img width="230px" src="https://user-images.githubusercontent.com/89301596/196046052-84ccd1e0-f444-4c74-84cf-3bc39bc84cd9.png">
+    </div>
+</div>
+
+
+<h4 align="right"><a href="#topo">⬆️Topo</a></h4>
+
+#
 <h2 href="#pastas">Estrutura das tabelas - Back End</h2>
 
-<img width="450px" heith="450" src="https://user-images.githubusercontent.com/89301596/196046336-9dd08cea-0538-4a57-ac47-5c5545481bfd.png">
+<img width="450px" heith="450" src="https://user-images.githubusercontent.com/89301596/196484479-e78977e4-06a8-4635-b351-27989611daa2.png">
+
+
+<h4 align="right"><a href="#topo">⬆️Topo</a></h4>
+
+<div align="left">
 
 ## 💛 Contato
 
 ### <a href="mailto:rickhhard@gmail.com">📧</a>rickhhard@gmail.com
 
 ### <a href="mailto:rickhard@bol.com.br">📧</a>rickhard@bol.com.br
+</div>
