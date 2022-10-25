@@ -19,7 +19,6 @@ import ButtonComponent from '../../communs/Buttons/Buttons'
 import mais from '../../assets/imagesSvg/mais.svg'
 import menos from '../../assets/imagesSvg/menos.svg'
 import protect from '../../assets/imagesSvg/protected.svg'
-import azeite from '../../assets/imagesSvg/Products/azeite.png'
 
 export default function Cart() {
   const {

@@ -7,10 +7,8 @@ export type DatesLocal = {
   deliveyDate: string | Date;
 }
 
-export type TErrorsAndSuccessApi = {
-  message: string;
-  status: number;
-}
+export type TErrorsAndSuccessApi = 
+  string;
 
 export type ContextGlobaTypes = {
   userLocal: any

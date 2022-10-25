@@ -50,10 +50,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   let [ datesLocal, setDatesLocal ] = useLocalStorage<DatesLocal[] | []>("dates", []);
   let [ date, setDate ] = useState<string>(""); 
   
-  const [ errorsAndSuccess, setErrorsAndSuccess ] = useState<TErrorsAndSuccessApi>({
-    message: "",
-    status: 0
-  })
+  const [ errorsAndSuccess, setErrorsAndSuccess ] = useState<TErrorsAndSuccessApi>('')
 
   const formUser = useForm<IUsersType>({
     first_name: "",
@@ -69,10 +66,10 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
       const res = await apiBase.post("/user/singUp", {...formUser.form})
       setEmailLocal(formUser.form.email);
       formUser.clearInputs()
-      setErrorsAndSuccess({message: res.data.message, status: res.status})
+      setErrorsAndSuccess(res.data.message)
     } catch (error: any) {
       console.log(error)
-      setErrorsAndSuccess({message: error?.response?.data, status: 400})
+      setErrorsAndSuccess(error?.response?.data)
     }
   }
 
@@ -136,10 +133,8 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     try {
 
       if ( formUser.form.email.length <= 0 && emailLocalKey?.length! <= 0 ) {
-        setErrorsAndSuccess({
-          message: "Coloque o seu email para prosseguir com a compra!.", 
-          status: 400
-        })
+        setErrorsAndSuccess(
+          "Coloque o seu email para prosseguir com a compra!.")
         return
       }
 
@@ -160,7 +155,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
 
     } catch (error: any) {
       console.log(error);
-      setErrorsAndSuccess({message: error?.response?.data, status: 400})
+      setErrorsAndSuccess(error?.response?.data)
     }
   }
 

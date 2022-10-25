@@ -9,7 +9,7 @@
   background-color: $white;
 
   border-radius: 0.5rem;
-  border: 1px solid $gray-400;
+  border: 0.0625rem solid $gray-400;
 
   right: 0;
   position: absolute;
@@ -38,7 +38,7 @@
       padding: 0.5rem 0 0.5rem 0;
 
       border-radius: 0.5rem;
-      border: 1px solid $gray-300;
+      border: 0.0625rem solid $gray-300;
 
       h2 {
         font-size: 1.5rem;
@@ -79,7 +79,7 @@
             padding: 0.5rem;
 
             border-radius: 8rem;
-            border: 1px solid $gray-300;
+            border: 0.0625rem solid $gray-300;
           }
 
           > div {
@@ -110,7 +110,7 @@
       }
 
       .containerUl {
-        height: 350px;
+        height: 21.875rem;
 
         list-style-type: none;
 
@@ -202,7 +202,7 @@
               height: 1.5rem;
 
               border: 2px solid $gray-300;
-              border-radius: 50px;
+              border-radius: 3.125rem;
             }
           }
         }
@@ -214,14 +214,14 @@
 
           background-color: $green-600;
 
-          border-radius: 10px;
-          border: 1px solid $gray-300;
+          border-radius: 0.625rem;
+          border: 0.0625rem solid $gray-300;
         }
       }
 
       margin-top: 0.5rem;
 
-      border: 1px solid $gray-300;
+      border: 0.0625rem solid $gray-300;
     }
 
     .containerPayment {

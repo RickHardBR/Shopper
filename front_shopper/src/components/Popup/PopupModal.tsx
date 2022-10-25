@@ -7,21 +7,20 @@ import Popup from 'reactjs-popup'
 import styles from './style.module.scss'
 
 export const PopupModal = () => {
-  const { errosAndSuccess, setErrosAndSuccess, isOpenModal, setIsOpenModal } =
+  const { errorsAndSuccess, setErrorsAndSuccess } =
     useContext(ContextGlobal)
-  console.log(errosAndSuccess)
 
   return (
     <>
-      {errosAndSuccess.length > 0 ? (
-        <div onClick={() => setErrosAndSuccess('')}>
-          <Popup open={true} modal>
+      {errorsAndSuccess.length > 0 ? (
+        <div className={styles.popupModal} onClick={() => setErrorsAndSuccess('')}>
+          <Popup open={true} modal >
             <div className={styles.content}>
-              <div onClick={() => setErrosAndSuccess('')}>
+              <div onClick={() => setErrorsAndSuccess('')}>
                 <span>x</span>
               </div>
               <h1 className={styles.title}>Informação</h1>
-              <h3 className={styles.messageError}>{errosAndSuccess}</h3>
+              <h3 className={styles.messageError}>{errorsAndSuccess}</h3>
             </div>
           </Popup>
         </div>
