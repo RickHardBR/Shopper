@@ -177,7 +177,7 @@ export default function Cart() {
                 </span>
               </div>
               <ButtonComponent>
-                <button onClick={() => purchaseProducts()}>Finalizar</button>
+                <button disabled={cartLocal!.length  <= 0 ? true : false } onClick={() => purchaseProducts()}>Finalizar</button>
               </ButtonComponent>
               <p>Métodos de pagamento</p>
               <div className={styles.paymentCards}>
