@@ -61,6 +61,7 @@ header {
         color: $white;
         font-size: 1.125rem;
       }
+
       p {
         color: $white;
       }
@@ -70,6 +71,7 @@ header {
 
 @media only screen and (max-width: 599px) {
   .container {
+    
     .menuHeader {
       display: none;
     }

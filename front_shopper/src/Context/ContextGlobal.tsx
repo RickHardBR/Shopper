@@ -39,8 +39,6 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     'cart',
     []
   )
-  let [userLocal, setUserLocal] = useLocalStorage<IUsersType | any>('user', '')
-  let [emailLocal, setEmailLocal] = useLocalStorage<string>('email', '')
 
   let [datesLocal, setDatesLocal] = useLocalStorage<DatesLocal[] | []>(
     'dates',
@@ -63,7 +61,6 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     try {
       e.preventDefault()
       const res = await apiBase.post('/user/singUp', { ...formUser.form })
-      setEmailLocal(formUser.form.email)
       formUser.clearInputs()
       setErrorsAndSuccess(res.data.message)
     } catch (error: any) {
@@ -184,8 +181,6 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     addCartLocal,
     setCartLocal,
     removeItemLocal,
-    userLocal,
-    emailLocal,
     //* =================
     formUser,
     addUser,

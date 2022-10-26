@@ -13,7 +13,7 @@
 
   right: 0;
   position: absolute;
-  
+
   padding: 1rem;
   margin-top: 0.5rem;
 
@@ -24,6 +24,7 @@
     font-size: 2rem;
     color: $blue-900;
   }
+
   .buttonMobile {
     display: none;
   }
@@ -146,7 +147,7 @@
             font-weight: bold;
             color: $green-600;
 
-            > span{
+            > span {
               font-size: 0.7rem;
             }
           }
@@ -171,6 +172,7 @@
               height: 50%;
             }
           }
+
           .quanty {
             display: flex;
             align-items: center;
@@ -286,6 +288,7 @@
 @media screen and (max-width: 700px) {
   .container {
     width: 100%;
+
     .buttonMobile {
       display: none;
     }
@@ -294,6 +297,7 @@
 
 @media screen and (max-width: 600px) {
   .container {
+
     .buttonMobile {
       display: block;
     }
@@ -302,11 +306,14 @@
 
 @media screen and (max-width: 570px) {
   .container {
+
     .containerPay {
+
       .contentDate {
         flex-direction: column;
         padding-bottom: 0.5rem;
       }
+
       .containerDate {
         gap: 0.5rem;
       }
@@ -314,6 +321,7 @@
   }
 
   .containerCards {
+    
     .containerUl {
       padding-bottom: 1.5rem;
 

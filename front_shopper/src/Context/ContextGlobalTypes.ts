@@ -11,7 +11,6 @@ export type TErrorsAndSuccessApi =
   string;
 
 export type ContextGlobaTypes = {
-  userLocal: any
   isOpen: boolean
   selectQty: number
   errorsAndSuccess: TErrorsAndSuccessApi
@@ -19,7 +18,6 @@ export type ContextGlobaTypes = {
   products: IProductType[]
   productsLoading: boolean
   cartLocal: IProductType[] | [] | undefined
-  emailLocal: string | null | undefined
   getProducts: () => Promise<void>
   setDate: (input: string) => void
   setCartLocal: (input: any) => void

@@ -67,19 +67,49 @@ Você vai criar um formulário simples de cadastro de pedidos de supermercado. O
 #
 
 <dl>
+  <dd>🎴Front End</dd>
+  
   <dd>📌React</dd>
+  
+  <dd>📌vite</dd>
 
   <dd>📌JavaScript</dd>
 
-  <dd>📌axios</dd>
+  <dd>📌TypeScript</dd>
 
-  <dd>📌date-fns</dd>
+  <dd>📌Axios</dd>
 
-  <dd>📌react-Paginate</dd>
+  <dd>📌Date-fns</dd>
 
-  <dd>📌react-router-dom</dd>
+  <dd>📌React-paginate</dd>
 
+  <dd>📌React-router-dom</dd>
+
+  <dd>📌Reactjs-popup</dd>
+  
   <dd>📌SASS - SCSS</dd>
+  
+  <dd>📌Iconify</dd>
+  
+  <dd>📌@prismicio</dd>
+  </dl>
+
+  <dl>
+ <dd>🗃️Back End</dd>
+
+  <dd>📌NodeJS</dd>
+
+  <dd>📌TypeScript</dd>
+
+  <dd>📌Express</dd>
+
+  <dd>📌Cors</dd>
+  
+  <dd>📌Knex</dd>
+  
+  <dd>📌MySql</dd>
+  
+  <dd>📌Uuid</dd>
 </dl>
 
 <h2 id="vite"><b>Criando uma aplicação com Vite</b></h2>

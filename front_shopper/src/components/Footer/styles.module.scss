@@ -21,8 +21,8 @@
       a {
         color: $white;
         text-decoration: none;
-        margin: 0 .2rem 0 0.2rem;
-        
+        margin: 0 0.2rem 0 0.2rem;
+
         font-weight: bold;
       }
 
@@ -62,6 +62,7 @@
 }
 
 @media only screen and (max-width: 405px) {
+  
   .iconsFooter {
     margin-left: 1rem;
 
