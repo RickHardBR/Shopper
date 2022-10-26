@@ -16,5 +16,43 @@
 
   <script type="module" src="/src/main.tsx"></script>
 </body>
+<script language=javascript>
+  var title = new MovingTitle("Shopper - Vamos comprar - ", 300, 10);
+  title.init();
+
+  function MovingTitle(writeText, interval, visibleLetters) {
+    let _instance = {};
+
+    let _currId = 0;
+    let _numberOfLetters = writeText.length;
+
+    function updateTitle() {
+      _currId += 1;
+      if (_currId > _numberOfLetters - 1) {
+        _currId = 0;
+      }
+
+      let startId = _currId;
+      let endId = startId + visibleLetters;
+      let finalText;
+      if (endId < _numberOfLetters - 1) {
+        finalText = writeText.substring(startId, endId);
+      } else {
+        let cappedEndId = _numberOfLetters;
+        endId = endId - cappedEndId;
+
+        finalText = writeText.substring(startId, cappedEndId) + writeText.substring(0, endId);
+      }
+
+      document.title = finalText;
+    }
+
+    _instance.init = function () {
+      setInterval(updateTitle, interval);
+    };
+
+    return _instance;
+  }
+</script>
 
 </html>

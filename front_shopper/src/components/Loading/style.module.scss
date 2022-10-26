@@ -11,3 +11,45 @@ p {
     font-size: 3rem;
   }
 }
+
+.indeterminateProgressBar {
+  /* Color */
+  background-color: #d1d5db;
+
+  /* Rounded border */
+  border-radius: 9999px;
+
+  /* Size */
+  height: 0.5rem;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.indeterminateProgressBarProgress {
+  /* Color */
+  background-color: $green-600;
+
+  /* Rounded border */
+  border-radius: 9999px;
+
+  /* Absolute position */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+
+  /* Move the bar infinitely */
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: indeterminateProgressBar;
+}
+
+@keyframes indeterminateProgressBar {
+  from {
+      left: -50%;
+  }
+  to {
+      left: 100%;
+  }
+}
