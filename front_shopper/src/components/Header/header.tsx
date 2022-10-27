@@ -14,10 +14,12 @@ export default function header() {
   return (
     <header>
       <div className={styles.container}>
+      <a href="https://landing.shopper.com.br/" target="_blank" rel="noopener">
         <img
         className={styles.logo}
         src={logo}
         alt="logo da Shopper" />
+        </a>
         <Hambuguer />
         <nav className={styles.menuHeader}>
           <div className={styles.itemMenu}>
