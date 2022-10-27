@@ -59,7 +59,7 @@ export default function Cart() {
     }
   }
 
-  useEffect(() => {
+  useEffect(() => {//verifica se tem alteração no estado CART chama função add + 1
     if (item) {
       const newCart = [...cart]
       newCart.forEach(itemProduct => {

@@ -2,11 +2,6 @@ import { ChangeEvent } from 'react';
 import { IProductType, IUsersType } from '../types/apiBaseTypes';
 
 
-export type DatesLocal = {
-  buyDate: string | Date;
-  deliveyDate: string | Date;
-}
-
 export type TErrorsAndSuccessApi = 
   string;
 

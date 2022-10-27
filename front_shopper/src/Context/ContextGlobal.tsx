@@ -6,14 +6,11 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 
 import { apiBase } from '../services/apiBase'
 
-import { formatDate } from '../utils/formatDate'
-
-import { DatesLocal, TErrorsAndSuccessApi } from './ContextGlobalTypes'
+import { TErrorsAndSuccessApi } from './ContextGlobalTypes'
 
 import { ContextGlobaTypes } from './ContextGlobalTypes'
 
 import { IProductType, IUsersType } from '../types/apiBaseTypes'
-import { getKeyLocalStorage } from '../utils/getKeyLocalStorage'
 
 type ContextGlobalProps = {
   children: ReactNode
@@ -24,32 +21,30 @@ export const ContextGlobal = createContext<ContextGlobaTypes>(
 )
 
 export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false)//abrir menu 
 
   const [products, setProducts] = useState<IProductType[]>([])
 
   const [productsLoading, setProductsLoading] = useState<boolean>(false)
+
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
   const [selectQty, setSelectQty] = useState<number>(1)
 
   const [currentPage, setCurrentPage] = useState<number>(1)
 
-  let [cartLocal, setCartLocal] = useLocalStorage<IProductType[] | []>(
+  let [cartLocal, setCartLocal] = useLocalStorage<IProductType[] | []>(//persistir cart localmente
     'cart',
     []
   )
 
-  let [datesLocal, setDatesLocal] = useLocalStorage<DatesLocal[] | []>(
-    'dates',
-    []
-  )
+
   let [date, setDate] = useState<string>('')
 
-  const [errorsAndSuccess, setErrorsAndSuccess] =
+  const [errorsAndSuccess, setErrorsAndSuccess] =//joga os erros e  sucessos da API para o useState
     useState<TErrorsAndSuccessApi>('')
 
-  const formUser = useForm<IUsersType>({
+  const formUser = useForm<IUsersType>({//hook de formulário
     first_name: '',
     last_name: '',
     email: ''
@@ -69,18 +64,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     }
   }
 
-  const addDateLocal = (deliveryDate: string) => {
-    const newsDate = [...datesLocal!]
-
-    const newDate: DatesLocal = {
-      buyDate: formatDate(new Date(date), 'short'),
-      deliveyDate: formatDate(new Date(deliveryDate + 'T00:00'), 'short')
-    }
-    newsDate.push(newDate)
-    setDatesLocal(newsDate)
-  }
-
-  const addCartLocal = (item: IProductType) => {
+  const addCartLocal = (item: IProductType) => {// add item ao cart local
     const newCart = [...cartLocal!]
 
     const index = cartLocal!.findIndex(
@@ -98,7 +82,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     setIsOpen(true)
   }
 
-  const removeItemLocal = (id: number) => {
+  const removeItemLocal = (id: number) => { //remove o item do carrinho
     const cloneCart = [...cartLocal!]
 
     const product = cloneCart.findIndex(item => item.id_product === id)
@@ -108,7 +92,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     setCartLocal(cloneCart)
   }
 
-  const getProducts = async () => {
+  const getProducts = async () => {//pega todos os produtos da API
     try {
       setProductsLoading(true)
       const { data } = await apiBase.get(`/products/all/${currentPage}`)
@@ -121,9 +105,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     }
   }
 
-  const emailLocalKey = getKeyLocalStorage(String('email'))!.replace(/"/g, '')
-
-  const formatCart = cartLocal?.map((item: any) => {
+  const formatCart = cartLocal?.map((item: any) => {//é um metodo que formata os dados do cart local para API de compras (purchase)
     return {
       id_product: item.id_product,
       qty_product_selected: item.qty_selected
@@ -132,7 +114,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
 
   const purchaseProducts = async () => {
     try {
-      if (formUser.form.email.length <= 0 && emailLocalKey?.length! <= 0) {
+      if (formUser.form.email.length <= 0) {
         setErrorsAndSuccess(
           'Coloque o seu email para prosseguir com a compra!.'
         )
@@ -140,14 +122,11 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
       }
 
       const res = await apiBase.post(
-        `/purchase/${
-          emailLocalKey?.length! > 0 ? emailLocalKey! : formUser.form.email
-        }?date=${date}`,
+        `/purchase/${formUser.form.email}?date=${date}`,
         formatCart
       )
 
       if (res.status === 200) {
-        addDateLocal(date)
         setCartLocal([])
         await getProducts()
         setErrorsAndSuccess(

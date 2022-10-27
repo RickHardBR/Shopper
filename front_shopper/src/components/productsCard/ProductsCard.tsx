@@ -53,7 +53,7 @@ export default function ProductsCard() {
                         type="number"
                         min="0"
                         max="10"
-                        placeholder="0"
+                        placeholder="1"
                         onChange={(e: any) =>
                           setSelectQty(Number(e.target.value))
                         }
