@@ -1,4 +1,4 @@
-f<h1 id="topo">Desafio - Shopper</h1>
+<h1 id="topo">Desafio - Shopper</h1>
 Repositório com os trabalhos feitos durante o BootCamp AfroAcademy
 
 - [Indice](#funciona)
@@ -301,6 +301,11 @@ Com certeza é uma opção a considerar na hora de criar seu novo projeto.
 
 #
 
+<h3>Tela inicial mostrando a ordenação alfabética dos produtos</h3>
+<img width= 900px src="https://user-images.githubusercontent.com/89301596/198231720-885ff696-13b2-4829-92b8-36ce09dac443.png" />
+
+#
+
 <h3>Detalhe da paginação</h3>
 <img width= 400px src="https://user-images.githubusercontent.com/89301596/196485717-975630b8-0637-4d3b-bf92-d1319404c46a.png" />
 
@@ -319,10 +324,20 @@ Com certeza é uma opção a considerar na hora de criar seu novo projeto.
 <img width= 400px src="https://user-images.githubusercontent.com/89301596/196486101-3e4b83db-4b21-4f73-a67d-5e2bb31c131d.png">
 
 #
+<h3>Detalhe da data, não pode escolher data de entrega anterior a compra.</h3>
+<img width= 400px src="https://user-images.githubusercontent.com/89301596/198230680-228c0382-1a97-4d44-876e-a934fa695342.png">
+
+#
 
 <h3>Detalhe para o item</h3>
 <p>Quando temos apenas um item o botão de ( - ) menos fica oculto</p>
 <img width= 600px src="https://user-images.githubusercontent.com/89301596/196486329-19f88a12-cac1-4d56-8c5a-ae940f6c3b8f.png">
+
+#
+
+<h3>Recibo de compra</h3>
+
+<img width= 600px src="https://user-images.githubusercontent.com/89301596/198231095-b51dd276-649e-4be3-acae-3b561ebdb972.png">
 
 <h4 align="right"><a href="#topo">⬆️Topo</a></h4>
 

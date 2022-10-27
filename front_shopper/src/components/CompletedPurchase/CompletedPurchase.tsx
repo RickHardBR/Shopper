@@ -72,6 +72,7 @@ export default function CompletedPurchase() {
           <p className={styles.valueTotal}>{`R$ ${valueTotal.toFixed(2)}`}</p>
         </div>
         <div className={styles.footer}>
+          <img src={logo} />
           <h2>Volte Sempre!!</h2>
         </div>
       </div>
