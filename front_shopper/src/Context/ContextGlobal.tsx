@@ -174,7 +174,10 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
       }
     } catch (error: any) {
       console.log(error)
-      setErrorsAndSuccess(error?.response?.data)
+      setErrorsAndSuccess({
+        type: 'message',
+        message: error?.response?.data
+      })
     }
   }
 
