@@ -1,8 +1,4 @@
-import {
-  useContext,
-  useEffect,
-  useState
-} from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { Icon } from '@iconify/react'
 
@@ -59,7 +55,7 @@ export default function Cart() {
     }
   }
 
-  useEffect(() => {//verifica se tem alteração no estado CART chama função add + 1
+  useEffect(() => {
     if (item) {
       const newCart = [...cart]
       newCart.forEach(itemProduct => {
@@ -78,7 +74,12 @@ export default function Cart() {
     0
   )
 
- return (
+  const currentDate = formatDate(new Date(), 'short')
+    .split('/')
+    .reverse()
+    .join('-')
+
+  return (
     <>
       {isOpen && (
         <section className={styles.container}>
@@ -104,6 +105,7 @@ export default function Cart() {
                     <p>Data de entrega</p>
                     <input
                       className={styles.dateInput}
+                      min={currentDate}
                       type="date"
                       onChange={e => setDate(e.target.value)}
                     />
@@ -177,7 +179,12 @@ export default function Cart() {
                 </span>
               </div>
               <ButtonComponent>
-                <button disabled={cartLocal!.length  <= 0 ? true : false } onClick={() => purchaseProducts()}>Finalizar</button>
+                <button
+                  disabled={cartLocal!.length <= 0 ? true : false}
+                  onClick={() => purchaseProducts()}
+                >
+                  Finalizar
+                </button>
               </ButtonComponent>
               <p>Métodos de pagamento</p>
               <div className={styles.paymentCards}>

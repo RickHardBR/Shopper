@@ -6,11 +6,12 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 
 import { apiBase } from '../services/apiBase'
 
-import { TErrorsAndSuccessApi } from './ContextGlobalTypes'
+import { TErrorsAndSuccessApi, TCompletedPurchase } from './ContextGlobalTypes'
 
 import { ContextGlobaTypes } from './ContextGlobalTypes'
 
 import { IProductType, IUsersType } from '../types/apiBaseTypes'
+import { formatDate } from '../utils/formatDate'
 
 type ContextGlobalProps = {
   children: ReactNode
@@ -21,7 +22,7 @@ export const ContextGlobal = createContext<ContextGlobaTypes>(
 )
 
 export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)//abrir menu 
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const [products, setProducts] = useState<IProductType[]>([])
 
@@ -33,18 +34,28 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
 
   const [currentPage, setCurrentPage] = useState<number>(1)
 
-  let [cartLocal, setCartLocal] = useLocalStorage<IProductType[] | []>(//persistir cart localmente
+  const [cartLocal, setCartLocal] = useLocalStorage<IProductType[] | []>(
     'cart',
     []
   )
 
+  const [completedPurchase, setCompletedPurchase] =
+    useState<TCompletedPurchase>({
+      name: '',
+      buyDate: '',
+      deliveyDate: '',
+      listPurchase: []
+    })
 
-  let [date, setDate] = useState<string>('')
+  const [date, setDate] = useState<string>('')
 
-  const [errorsAndSuccess, setErrorsAndSuccess] =//joga os erros e  sucessos da API para o useState
-    useState<TErrorsAndSuccessApi>('')
+  const [errorsAndSuccess, setErrorsAndSuccess] =
+    useState<TErrorsAndSuccessApi>({
+      type: '',
+      message: '',
+    })
 
-  const formUser = useForm<IUsersType>({//hook de formulário
+  const formUser = useForm<IUsersType>({
     first_name: '',
     last_name: '',
     email: ''
@@ -57,14 +68,21 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
       e.preventDefault()
       const res = await apiBase.post('/user/singUp', { ...formUser.form })
       formUser.clearInputs()
-      setErrorsAndSuccess(res.data.message)
+      setErrorsAndSuccess({
+        type: 'message',
+        message: res.data.message
+      })
     } catch (error: any) {
       console.log(error)
-      setErrorsAndSuccess(error?.response?.data)
+      setErrorsAndSuccess({
+        type: 'message',
+        message: error?.response?.data
+      })
     }
   }
 
-  const addCartLocal = (item: IProductType) => {// add item ao cart local
+  const addCartLocal = (item: IProductType) => {
+    
     const newCart = [...cartLocal!]
 
     const index = cartLocal!.findIndex(
@@ -82,7 +100,8 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     setIsOpen(true)
   }
 
-  const removeItemLocal = (id: number) => { //remove o item do carrinho
+  const removeItemLocal = (id: number) => {
+    
     const cloneCart = [...cartLocal!]
 
     const product = cloneCart.findIndex(item => item.id_product === id)
@@ -92,7 +111,8 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     setCartLocal(cloneCart)
   }
 
-  const getProducts = async () => {//pega todos os produtos da API
+  const getProducts = async () => {
+    
     try {
       setProductsLoading(true)
       const { data } = await apiBase.get(`/products/all/${currentPage}`)
@@ -105,18 +125,28 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     }
   }
 
-  const formatCart = cartLocal?.map((item: any) => {//é um metodo que formata os dados do cart local para API de compras (purchase)
+  const formatCart = cartLocal?.map((item: any) => {
+   
     return {
       id_product: item.id_product,
       qty_product_selected: item.qty_selected
     }
   })
 
+    const validateInformations =
+    formUser.form.email.length <= 0||
+    formUser.form.first_name.length <= 0 ||
+    formUser.form.last_name.length <= 0 ||
+    date.length <= 0
+
   const purchaseProducts = async () => {
     try {
-      if (formUser.form.email.length <= 0) {
+      if (validateInformations) {
         setErrorsAndSuccess(
-          'Coloque o seu email para prosseguir com a compra!.'
+         {
+          type: 'message',
+          message:  'Verique se preencheou Nome, sobrenome e email  ou data de entrega para prosseguir com a compra!.'
+         }
         )
         return
       }
@@ -127,11 +157,20 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
       )
 
       if (res.status === 200) {
+        setErrorsAndSuccess({
+          type: 'obj'
+        })
+        setCompletedPurchase({
+          name: `${formUser.form.first_name} ${formUser.form.last_name}`,
+          buyDate: formatDate(new Date(), 'short'),
+          deliveyDate: date,
+          listPurchase: cartLocal!
+        })
+        setDate('')
+        setIsOpen(false)
         setCartLocal([])
         await getProducts()
-        setErrorsAndSuccess(
-          'Sua compra foi realizada com sucesso!!'
-        )
+        
       }
     } catch (error: any) {
       console.log(error)
@@ -157,6 +196,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
     setSelectQty,
     //* =================
     cartLocal,
+    completedPurchase,
     addCartLocal,
     setCartLocal,
     removeItemLocal,

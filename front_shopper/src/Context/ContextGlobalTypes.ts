@@ -3,7 +3,17 @@ import { IProductType, IUsersType } from '../types/apiBaseTypes';
 
 
 export type TErrorsAndSuccessApi = 
-  string;
+  {
+    type: string,
+    message?: string,
+  };
+
+export type TCompletedPurchase = {
+  name: string,
+  buyDate: string,
+  deliveyDate: string,
+  listPurchase: IProductType[]
+}
 
 export type ContextGlobaTypes = {
   isOpen: boolean
@@ -13,6 +23,7 @@ export type ContextGlobaTypes = {
   products: IProductType[]
   productsLoading: boolean
   cartLocal: IProductType[] | [] | undefined
+  completedPurchase: TCompletedPurchase
   getProducts: () => Promise<void>
   setDate: (input: string) => void
   setCartLocal: (input: any) => void
