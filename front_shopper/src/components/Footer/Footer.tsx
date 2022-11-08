@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
         <p>
-          Todos os direitos reservados - 🔗<a href="https://github.com/RickHardBR" target="_blank" rel="noopener">RickHarDev</a> - ©️ - 2022{' '}
+          Todos os direitos reservados - <span>🔗</span><a href="https://github.com/RickHardBR" target="_blank" rel="noopener">RickHarDev</a> ©️ - 2022{' '}
           <a href="https://landing.shopper.com.br/" target="_blank" rel="noopener">
             <img 
           src={logo}
