@@ -11,7 +11,6 @@ import Paginate from '../Paginate/paginate'
 import ButtonComponent from '../../communs/Buttons/Buttons'
 
 export default function ProductsCard() {
-  
   const {
     getProducts,
     products,
@@ -19,7 +18,7 @@ export default function ProductsCard() {
     currentPage,
     setCurrentPage,
     addCartLocal,
-    setSelectQty,
+    setSelectQty
   } = useContext(ContextGlobal)
 
   useEffect(() => {
@@ -30,9 +29,7 @@ export default function ProductsCard() {
     <div className={styles.container}>
       <ul className={styles.ulContainer}>
         {!productsLoading ? (
-      
           products.map(item => {
-          
             return (
               <li key={item.id_product} className={styles.productsCard}>
                 <div className={styles.productsCardTop}>
@@ -41,8 +38,7 @@ export default function ProductsCard() {
                       <img src={item.photo_product} alt="azeite" />
                     </div>
 
-                    <div
-                    className={styles.productsPrice}>
+                    <div className={styles.productsPrice}>
                       R$ {item.price} <span>unid</span>
                     </div>
                   </div>
@@ -62,9 +58,7 @@ export default function ProductsCard() {
 
                     <div className={styles.productsPurchase}></div>
                     <ButtonComponent>
-                      <button 
-                        onClick={() =>
-                        addCartLocal(item)}>
+                      <button onClick={() => addCartLocal(item)}>
                         Comprar
                       </button>
                     </ButtonComponent>
@@ -75,18 +69,12 @@ export default function ProductsCard() {
                 <div className={styles.containerCardAbout}>
                   <div className={styles.productsCardAbout}>
                     <div className={styles.productsCardMiddle}>
-                      <p>
-                        {item.product_name}
-                      </p>
+                      <p>{item.product_name}</p>
                     </div>
 
                     <div className={styles.productsCardBase}>
-                      <p>
-                        Estoque:
-                      </p>
-                      <span>
-                        {item.qty_stock}
-                      </span>
+                      <p>Estoque:</p>
+                      <span>{item.qty_stock}</span>
                     </div>
                   </div>
                 </div>

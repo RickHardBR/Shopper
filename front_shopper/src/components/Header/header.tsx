@@ -14,37 +14,25 @@ export default function header() {
   return (
     <header>
       <div className={styles.container}>
-      <a href="https://landing.shopper.com.br/" target="_blank" rel="noopener">
-        <img
-        className={styles.logo}
-        src={logo}
-        alt="logo da Shopper" />
+        <a
+          href="https://landing.shopper.com.br/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img className={styles.logo} src={logo} alt="logo da Shopper" />
         </a>
         <Hambuguer />
         <nav className={styles.menuHeader}>
-          <div className={styles.itemMenu}>
-            Fazer login
-          </div>
-          <div className={styles.itemMenu}>
-            Criar conta &gt;
-          </div>
-          <div
-          className={styles.button}
-          onClick={() => setIsOpen(!isOpen)}>
+          <div className={styles.itemMenu}>Fazer login</div>
+          <div className={styles.itemMenu}>Criar conta &gt;</div>
+          <div className={styles.button} onClick={() => setIsOpen(!isOpen)}>
             {!isOpen ? (
               <>
-                <img
-                className={styles.cart}
-                src={cart}
-                alt="carrinho" />
-                <div className={styles.textCar}>
-                  Carrinho
-                </div>
+                <img className={styles.cart} src={cart} alt="carrinho" />
+                <div className={styles.textCar}>Carrinho</div>
               </>
             ) : (
-              <p>
-                Fechar
-              </p>
+              <p>Fechar</p>
             )}
           </div>
         </nav>

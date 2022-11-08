@@ -1,4 +1,3 @@
-
 import { useContext } from 'react'
 import { ContextGlobal } from '../../Context/ContextGlobal'
 
@@ -6,16 +5,13 @@ import styles from './style.module.scss'
 import ButtonComponent from '../../communs/Buttons/Buttons'
 
 export default function Data() {
-  const { formUser, addUser } = useContext(ContextGlobal);
+  const { formUser, addUser } = useContext(ContextGlobal)
 
-  const { form, onChange } = formUser;
-  const { first_name, last_name, email} = form;
+  const { form, onChange } = formUser
+  const { first_name, last_name, email } = form
 
   return (
-    <form
-      onSubmit={addUser}
-     className={styles.dataContainer}
-    >
+    <form onSubmit={addUser} className={styles.dataContainer}>
       <div className={styles.dataContent}>
         <div className={styles.NameContent}>
           <p>
@@ -23,7 +19,7 @@ export default function Data() {
           </p>
           <input
             className={styles.inputsName}
-            placeholder={"Digite seu nome"}
+            placeholder={'Digite seu nome'}
             type="text"
             id="User"
             name="first_name"
@@ -38,7 +34,7 @@ export default function Data() {
           </p>
           <input
             className={styles.inputsName}
-            placeholder={"Digite seu sobrenome"}
+            placeholder={'Digite seu sobrenome'}
             type="text"
             id="lastName"
             name="last_name"
@@ -54,7 +50,7 @@ export default function Data() {
         </p>
         <input
           className={styles.inputsEmail}
-          placeholder={"seunome@exemplo.com.br"}
+          placeholder={'seunome@exemplo.com.br'}
           type="e-mail"
           name="email"
           value={email}
@@ -64,9 +60,7 @@ export default function Data() {
       </div>
       <div className={styles.register}>
         <ButtonComponent>
-          <button type="submit">
-            Cadastrar
-          </button>
+          <button type="submit">Cadastrar</button>
         </ButtonComponent>
       </div>
     </form>

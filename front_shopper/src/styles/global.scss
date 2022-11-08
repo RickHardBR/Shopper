@@ -7,7 +7,6 @@
 }
 
 :root {
-  
   @media screen and (max-width: 1080px) {
     font-size: 93.75%;
   }
@@ -18,7 +17,6 @@
 }
 
 body {
-
   font-size: 1rem;
   color: $gray-900;
   font-family: 'lato', sans-serif;
@@ -27,7 +25,7 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  
+
   flex: 1;
 
   min-height: 100vh;
@@ -36,9 +34,8 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  
-  flex: 1;
 
+  flex: 1;
 }
 
 body::-webkit-scrollbar {

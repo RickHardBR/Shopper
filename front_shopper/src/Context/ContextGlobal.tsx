@@ -52,7 +52,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   const [errorsAndSuccess, setErrorsAndSuccess] =
     useState<TErrorsAndSuccessApi>({
       type: '',
-      message: '',
+      message: ''
     })
 
   const formUser = useForm<IUsersType>({
@@ -82,8 +82,8 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   }
 
   const addCartLocal = (item: IProductType) => {
-    if(selectQty < 0) {
-      selectQty  = selectQty * -1
+    if (selectQty < 0) {
+      selectQty = selectQty * -1
     }
     const newCart = [...cartLocal!]
 
@@ -103,7 +103,6 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   }
 
   const removeItemLocal = (id: number) => {
-    
     const cloneCart = [...cartLocal!]
 
     const product = cloneCart.findIndex(item => item.id_product === id)
@@ -114,7 +113,6 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   }
 
   const getProducts = async () => {
-    
     try {
       setProductsLoading(true)
       const { data } = await apiBase.get(`/products/all/${currentPage}`)
@@ -128,15 +126,14 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   }
 
   const formatCart = cartLocal?.map((item: any) => {
-   
     return {
       id_product: item.id_product,
       qty_product_selected: item.qty_selected
     }
   })
 
-    const validateInformations =
-    formUser.form.email.length <= 0||
+  const validateInformations =
+    formUser.form.email.length <= 0 ||
     formUser.form.first_name.length <= 0 ||
     formUser.form.last_name.length <= 0 ||
     date.length <= 0
@@ -144,12 +141,11 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   const purchaseProducts = async () => {
     try {
       if (validateInformations) {
-        setErrorsAndSuccess(
-         {
+        setErrorsAndSuccess({
           type: 'message',
-          message:  'Verique se preencheou Nome, sobrenome e email  ou data de entrega para prosseguir com a compra!.'
-         }
-        )
+          message:
+            'Verique se preencheou Nome, sobrenome e email  ou data de entrega para prosseguir com a compra!.'
+        })
         return
       }
 
@@ -172,7 +168,6 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
         setIsOpen(false)
         setCartLocal([])
         await getProducts()
-        
       }
     } catch (error: any) {
       console.log(error)

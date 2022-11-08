@@ -1,17 +1,15 @@
-import { ChangeEvent } from 'react';
-import { IProductType, IUsersType } from '../types/apiBaseTypes';
+import { ChangeEvent } from 'react'
+import { IProductType, IUsersType } from '../types/apiBaseTypes'
 
-
-export type TErrorsAndSuccessApi = 
-  {
-    type: string,
-    message?: string,
-  };
+export type TErrorsAndSuccessApi = {
+  type: string
+  message?: string
+}
 
 export type TCompletedPurchase = {
-  name: string,
-  buyDate: string,
-  deliveyDate: string,
+  name: string
+  buyDate: string
+  deliveyDate: string
   listPurchase: IProductType[]
 }
 
@@ -28,20 +26,20 @@ export type ContextGlobaTypes = {
   setDate: (input: string) => void
   setCartLocal: (input: any) => void
   setIsOpen: (input: boolean) => void
-  setSelectQty:(input: number) => void
+  setSelectQty: (input: number) => void
   removeItemLocal: (id: number) => void
   purchaseProducts: () => Promise<void>
   setErrorsAndSuccess: (input: TErrorsAndSuccessApi) => any
   setCurrentPage: (input: number) => void
-  addCartLocal: (input: IProductType)=> void
+  addCartLocal: (input: IProductType) => void
   addUser: (e: ChangeEvent<HTMLFormElement>) => Promise<void>
 
   isOpenModal: boolean
   setIsOpenModal: (input: boolean) => void
-  
+
   formUser: {
-    form: IUsersType;
+    form: IUsersType
     clearInputs: () => void
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
   }
 }

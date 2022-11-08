@@ -9,16 +9,23 @@ import { formatDate } from '../../utils/formatDate'
 import logo from '../../assets/imagesSvg/logoShopper.svg'
 
 export default function CompletedPurchase() {
-  
-  const {completedPurchase, setErrorsAndSuccess} = useContext(ContextGlobal)
+  const { completedPurchase, setErrorsAndSuccess } = useContext(ContextGlobal)
 
-  const valueTotal = completedPurchase.listPurchase.reduce((acc, currentValue)=>{
-    return acc + (currentValue.qty_selected! * currentValue.price)
-  }, 0)
+  const valueTotal = completedPurchase.listPurchase.reduce(
+    (acc, currentValue) => {
+      return acc + currentValue.qty_selected! * currentValue.price
+    },
+    0
+  )
 
   return (
     <div className={styles.container}>
-      <p className={styles.close} onClick={()=>setErrorsAndSuccess({type:''})}>X</p>
+      <p
+        className={styles.close}
+        onClick={() => setErrorsAndSuccess({ type: '' })}
+      >
+        X
+      </p>
       <div className={styles.content}>
         <p className={styles.head}>Compra finalizada</p>
         <div className={styles.userData}>
@@ -35,7 +42,12 @@ export default function CompletedPurchase() {
           <div className={styles.date}>
             Data entrega:
             <p>
-              <span>{formatDate(new Date(completedPurchase.deliveyDate + "T00:00"), 'short')}</span>
+              <span>
+                {formatDate(
+                  new Date(completedPurchase.deliveyDate + 'T00:00'),
+                  'short'
+                )}
+              </span>
             </p>
           </div>
         </div>
@@ -58,7 +70,8 @@ export default function CompletedPurchase() {
                       <p>x</p>
                       <div className={styles.price}>{`R$ ${item.price}`}</div>
                       <p>=</p>
-                      <div className={styles.totalPrice}>{`R$ ${item.qty_selected! * item.price
+                      <div className={styles.totalPrice}>{`R$ ${
+                        item.qty_selected! * item.price
                       }`}</div>
                     </div>
                   </div>
