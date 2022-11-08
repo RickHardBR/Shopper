@@ -30,7 +30,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
 
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
-  const [selectQty, setSelectQty] = useState<number>(1)
+  let [selectQty, setSelectQty] = useState<number>(1)
 
   const [currentPage, setCurrentPage] = useState<number>(1)
 
@@ -82,7 +82,9 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   }
 
   const addCartLocal = (item: IProductType) => {
-    
+    if(selectQty < 0) {
+      selectQty  = selectQty * -1
+    }
     const newCart = [...cartLocal!]
 
     const index = cartLocal!.findIndex(
