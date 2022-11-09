@@ -18,13 +18,14 @@ export default function header() {
           href="https://landing.shopper.com.br/"
           target="_blank"
           rel="noopener"
+          aria-label="Link para o site orininal Shopper"
         >
           <img className={styles.logo} src={logo} alt="logo da Shopper" />
         </a>
         <Hambuguer />
         <nav className={styles.menuHeader}>
-          <div className={styles.itemMenu}>Fazer login</div>
-          <div className={styles.itemMenu}>Criar conta &gt;</div>
+          <div className={styles.itemMenu} aria-label="Destativado">Fazer login</div>
+          <div className={styles.itemMenu} aria-label="Destativado">Criar conta &gt;</div>
           <div className={styles.button} onClick={() => setIsOpen(!isOpen)}>
             {!isOpen ? (
               <>

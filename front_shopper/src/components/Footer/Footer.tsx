@@ -14,6 +14,7 @@ export default function Footer() {
             href="https://github.com/RickHardBR"
             target="_blank"
             rel="noopener"
+            aria-label="Link para o repositório do github do criador desta página"
           >
             RickHarDev
           </a>{' '}
@@ -22,6 +23,7 @@ export default function Footer() {
             href="https://landing.shopper.com.br/"
             target="_blank"
             rel="noopener"
+            aria-label="Link para o site orininal Shopper"
           >
             <img src={logo} alt="logo Shopper" />
           </a>
@@ -32,6 +34,7 @@ export default function Footer() {
             href="https://www.instagram.com/shopper.com.br"
             target="_blank"
             rel="noopener"
+            aria-label="Link para o instagram da empresa Shopper"
           >
             <Icon className={styles.icons} icon="akar-icons:instagram-fill" />
           </a>
@@ -40,6 +43,7 @@ export default function Footer() {
             href="https://www.facebook.com/shopper.com.br"
             target="_blank"
             rel="noopener"
+            aria-label="Link para o facebook da empresa Shopper"
           >
             <Icon className={styles.icons} icon="akar-icons:facebook-fill" />
           </a>
@@ -48,6 +52,7 @@ export default function Footer() {
             href="https://www.youtube.com/channel/UC8lKcjNoanFo-kEi2w9mWaA/videos"
             target="_blank"
             rel="noopener"
+            aria-label="Link para o youtube da empresa Shopper"
           >
             <Icon className={styles.icons} icon="akar-icons:youtube-fill" />
           </a>

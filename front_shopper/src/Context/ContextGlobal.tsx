@@ -82,6 +82,7 @@ export const ContextGlobalComponent = ({ children }: ContextGlobalProps) => {
   }
 
   const addCartLocal = (item: IProductType) => {
+   //correção erro numero negativo no input
     if (selectQty < 0) {
       selectQty = selectQty * -1
     }
